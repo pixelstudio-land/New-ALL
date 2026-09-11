@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NEW ALL INTERIORES — PISOS, PORTAS & PERSIANAS
+   NEW ALL INTERIORES — PISOS VINÍLICOS & LAMINADOS
    Script Global, Simulador de Ambientes & Conversão
    Pixel Studio
    ========================================================================== */
@@ -83,10 +83,10 @@ function initMobileDrawer() {
   links.forEach(l => l.addEventListener('click', closeDrawer));
 }
 
-/* ── 4. SIMULADOR MULTISSOLUÇÕES (SEM VALORES NUMÉRICOS) ─────────────────── */
+/* ── 4. SIMULADOR DE ESCOPO (PISOS VINÍLICOS & LAMINADOS) ────────────────── */
 let currentSelectionNewAll = {
   product: 'vinilico',
-  name: 'Piso Vinílico de Alta Durabilidade',
+  name: 'Piso Vinílico Térmico & Resistente à Água',
   sqm: 45
 };
 
@@ -110,14 +110,14 @@ function initSimulator() {
     }
 
     if (summaryScope) {
-      summaryScope.textContent = `Área estimada: ${sqm} m² • Pacote Completo (Material Selecionado + Instalação Especializada Inclusa)`;
+      summaryScope.textContent = `Área estimada: ${sqm} m² • Pacote Completo: piso, materiais de instalação e mão de obra especializada.`;
     }
 
     if (btnAction) {
       const params = new URLSearchParams({
         produto: currentSelectionNewAll.product,
         metragem: sqm,
-        origem: 'simulador'
+        origem: 'simulador-newall'
       });
       btnAction.href = getDestinationUrl(params.toString());
     }
@@ -135,10 +135,6 @@ function initSimulator() {
         currentSelectionNewAll.name = 'Piso Vinílico Térmico & Resistente à Água';
       } else if (prod === 'laminado') {
         currentSelectionNewAll.name = 'Piso Laminado Clicado de Fácil Limpeza';
-      } else if (prod === 'portas') {
-        currentSelectionNewAll.name = 'Kit Portas Prontas com Fechaduras & Batentes';
-      } else if (prod === 'persianas') {
-        currentSelectionNewAll.name = 'Cortinas & Persianas Sob Medida com Controle Solar';
       }
 
       updateSimulator();
@@ -154,7 +150,6 @@ const galleryDataNewAll = [
   { src: 'images/PHOTO (7).jpg', title: 'Living Integrado & Sala de Jantar', sub: 'Piso Vinílico Amadeirado de Alto Padrão com Instalação Impecável' },
   { src: 'images/PHOTO (2).jpg', title: 'Dormitório Master Sofisticado', sub: 'Conforto Térmico, Acabamento Suave e Rodapés Brancos' },
   { src: 'images/PHOTO (4).jpg', title: 'Espaço Gourmet & Circulação', sub: 'Alta Resistência e Perfeita Harmonização com Mobiliário' },
-  { src: 'images/pexels-bertellifotografia-16985109.jpg', title: 'Integração de Ambientes', sub: 'Piso Laminado Nobre com Instalação Limpa e Rápida' },
   { src: 'images/pexels-artbovich-6489122.jpg', title: 'Sala de Estar Contemporânea', sub: 'Texturas Nobres e Acabamento de Revista' },
   { src: 'images/pexels-pixabay-271624.jpg', title: 'Suíte de Casal Iluminada', sub: 'Proteção Acústica e Aconchego Térmico para sua Família' }
 ];

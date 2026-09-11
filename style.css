@@ -1,6 +1,6 @@
 /* ==========================================================================
-   NEW ALL INTERIORES — PISOS, PORTAS & PERSIANAS
-   Design System & Estilos Globais
+   NEW ALL INTERIORES — PISOS VINÍLICOS & LAMINADOS
+   Design System, Componentes & Experiência de Luxo
    Pixel Studio
    ========================================================================== */
 
@@ -561,15 +561,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4px;
 }
 
-/* ── 7. CATÁLOGO MULTISSOLUÇÕES (4 LINHAS) ────────────────────────────────── */
+/* ── 7. CATÁLOGO MULTISSOLUÇÕES — PISOS VINÍLICOS & LAMINADOS ────────────── */
 .section-products {
   background: var(--bg-darker);
 }
 
-.products-grid-4 {
+.products-grid-2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1060px;
+  margin: 0 auto;
 }
 
 .product-card-newall {
@@ -590,7 +592,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-media-newall {
   position: relative;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -607,20 +609,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge-float-card {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(7, 11, 18, 0.85);
+  top: 14px;
+  left: 14px;
+  background: rgba(7, 11, 18, 0.88);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-cyan);
   color: var(--cyan-light);
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .product-body-newall {
-  padding: 24px 20px;
+  padding: 28px 26px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -628,35 +631,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-name-newall {
-  font-size: 1.35rem;
-  margin-bottom: 8px;
+  font-size: 1.45rem;
+  margin-bottom: 10px;
 }
 
 .product-desc-newall {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 22px;
 }
 
 .bullet-features {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 22px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .bullet-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
   color: var(--text-body);
+  line-height: 1.45;
 }
 
 .bullet-item svg {
   color: var(--cyan-light);
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.package-highlight {
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 0.86rem;
+  color: var(--text-white);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.package-highlight svg {
+  color: var(--cyan-light);
+  flex-shrink: 0;
+}
+
+.package-disclaimer {
+  font-size: 0.76rem;
+  color: var(--text-subtle);
+  line-height: 1.45;
+  margin: 14px 0 20px;
+  font-style: italic;
 }
 
 /* ── 8. SIMULADOR MULTISSOLUÇÕES ─────────────────────────────────────────── */
@@ -1354,7 +1385,7 @@ h1, h2, h3, h4, h5, h6 {
   .nav-menu { display: none; }
   .menu-toggle { display: flex; }
   .hero-title { font-size: 2.9rem; }
-  .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .products-grid-2 { grid-template-columns: 1fr; max-width: 580px; }
   .simulador-card-newall { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
   .showroom-banner { grid-template-columns: 1fr; }
   .diff-grid-newall { grid-template-columns: repeat(2, 1fr); }
@@ -1369,7 +1400,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-subtitle { font-size: 1rem; }
   .hero-stats { flex-direction: column; align-items: flex-start; gap: 16px; }
 
-  .products-grid-4 { grid-template-columns: 1fr; }
+  .products-grid-2 { grid-template-columns: 1fr; }
   .diff-grid-newall { grid-template-columns: 1fr; }
   .gallery-grid-newall { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
