@@ -147,8 +147,6 @@ function initSimulator() {
 
 /* ── 5. GALERIA & LIGHTBOX ───────────────────────────────────────────────── */
 const galleryDataNewAll = [
-  { src: 'images/PHOTO (7).jpg', title: 'Living Integrado & Sala de Jantar', sub: 'Piso Vinílico Amadeirado de Alto Padrão com Instalação Impecável' },
-  { src: 'images/PHOTO (2).jpg', title: 'Dormitório Master Sofisticado', sub: 'Conforto Térmico, Acabamento Suave e Rodapés Brancos' },
   { src: 'images/PHOTO (4).jpg', title: 'Espaço Gourmet & Circulação', sub: 'Alta Resistência e Perfeita Harmonização com Mobiliário' },
   { src: 'images/pexels-artbovich-6489122.jpg', title: 'Sala de Estar Contemporânea', sub: 'Texturas Nobres e Acabamento de Revista' },
   { src: 'images/pexels-pixabay-271624.jpg', title: 'Suíte de Casal Iluminada', sub: 'Proteção Acústica e Aconchego Térmico para sua Família' }
