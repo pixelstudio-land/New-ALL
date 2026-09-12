@@ -6,9 +6,9 @@
 
 /* ── CONFIGURAÇÃO CENTRAL DE CONVERSÃO ───────────────────────────────────── */
 const CONFIG = {
-  targetUrl: 'em-construcao.html',
-  respondiFallback: 'https://form.respondi.app/new-all',
-  useExternalForm: false
+  targetUrl: 'https://form.respondi.app/OfNld6qN',
+  respondiFallback: 'https://form.respondi.app/OfNld6qN',
+  useExternalForm: true
 };
 
 document.addEventListener('DOMContentLoaded', () => {
