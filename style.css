@@ -1381,11 +1381,30 @@ h1, h2, h3, h4, h5, h6 {
 .delay-2 { transition-delay: 0.22s; }
 .delay-3 { transition-delay: 0.32s; }
 
+.simulador-title {
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.showroom-title {
+  font-size: 2.1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.cities-title {
+  font-size: 1.45rem;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+/* ── 17. RESPONSIVIDADE & MOBILE DESIGN SYSTEM ───────────────────────────── */
 @media (max-width: 1080px) {
   .nav-menu { display: none; }
   .menu-toggle { display: flex; }
   .hero-title { font-size: 2.9rem; }
-  .products-grid-2 { grid-template-columns: 1fr; max-width: 580px; }
+  .products-grid-2 { grid-template-columns: 1fr; max-width: 600px; }
   .simulador-card-newall { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
   .showroom-banner { grid-template-columns: 1fr; }
   .diff-grid-newall { grid-template-columns: repeat(2, 1fr); }
@@ -1393,24 +1412,512 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .header-actions .btn { display: none; }
+  /* Layout Base & Espaçamento do Sticky Bar */
+  body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
 
-  .hero { padding: 120px 0 60px; }
-  .hero-title { font-size: 2.25rem; }
-  .hero-subtitle { font-size: 1rem; }
-  .hero-stats { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .container {
+    padding: 0 16px;
+  }
 
-  .products-grid-2 { grid-template-columns: 1fr; }
-  .diff-grid-newall { grid-template-columns: 1fr; }
-  .gallery-grid-newall { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  .section {
+    padding: 56px 0;
+  }
 
-  .cities-box { flex-direction: column; text-align: center; }
-  .cities-list-tags { justify-content: center; }
+  .section-header {
+    margin-bottom: 32px;
+  }
 
-  .cta-final-box { padding: 40px 24px; }
-  .cta-final-title { font-size: 2rem; }
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.22;
+  }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  .mobile-sticky-bar { display: flex; }
+  .section-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* Botões no Mobile: quebra de linha permitida para evitar overflow */
+  .btn {
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .btn-lg {
+    padding: 14px 22px;
+    font-size: 0.92rem;
+  }
+
+  /* Header */
+  .header-actions .btn {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 1.05rem;
+  }
+
+  /* Hero Section Mobile */
+  .hero {
+    min-height: auto;
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 76px 0 32px;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    margin-bottom: 12px;
+    max-width: 100%;
+    border-radius: var(--radius-pill);
+  }
+
+  .hero-tag-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .hero-tag-pulse {
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.68rem, 6vw, 2.05rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .hero-badges-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    width: 100%;
+  }
+
+  .hero-badge-pill {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 9px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    justify-content: flex-start;
+  }
+
+  .hero-badge-pill svg {
+    flex-shrink: 0;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    line-height: 1.3;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+  }
+
+  .hero-stat-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-size: 1.45rem;
+  }
+
+  .hero-stat-desc {
+    font-size: 0.68rem;
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+
+  /* Catálogo de Produtos */
+  .products-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .product-media-newall {
+    height: 210px;
+  }
+
+  .product-body-newall {
+    padding: 22px 18px;
+  }
+
+  .product-name-newall {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+
+  .package-highlight {
+    font-size: 0.82rem;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .bullet-features {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .bullet-item {
+    font-size: 0.84rem;
+  }
+
+  .package-disclaimer {
+    font-size: 0.72rem;
+    margin: 12px 0 16px;
+  }
+
+  /* Simulador de Projeto */
+  .simulador-card-newall {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 22px 16px;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .simulador-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .simulador-info .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .simulador-box-newall {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .category-pills-grid {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .cat-pill-btn {
+    padding: 10px 8px;
+  }
+
+  .cat-pill-btn strong {
+    font-size: 0.84rem;
+  }
+
+  .cat-pill-btn span {
+    font-size: 0.68rem;
+  }
+
+  .scope-box-newall {
+    padding: 14px 12px;
+    margin-bottom: 18px;
+  }
+
+  .scope-title-newall {
+    font-size: 0.74rem;
+  }
+
+  .scope-val-newall {
+    font-size: 1.02rem;
+  }
+
+  #btn-simulador-newall,
+  .btn-simulador {
+    white-space: normal;
+    padding: 14px 16px;
+    font-size: 0.84rem;
+    text-align: center;
+    line-height: 1.35;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  #btn-simulador-newall svg,
+  .btn-simulador svg {
+    flex-shrink: 0;
+  }
+
+  /* Showroom & Visita Técnica */
+  .showroom-banner {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+    gap: 20px;
+  }
+
+  .showroom-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .showroom-info p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .showroom-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .showroom-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .diff-grid-newall {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .diff-card-newall {
+    padding: 22px 18px;
+  }
+
+  /* Cidades Atendidas */
+  .cities-box {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 18px;
+    text-align: center;
+    gap: 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .cities-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .cities-list-tags {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .city-chip {
+    font-size: 0.76rem;
+    padding: 4px 12px;
+  }
+
+  .cities-box .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Galeria */
+  .gallery-grid-newall {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .gallery-item-newall {
+    height: 230px;
+  }
+
+  /* Avaliações */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .review-card-newall {
+    padding: 22px 18px;
+  }
+
+  /* FAQ */
+  .faq-header-btn {
+    padding: 16px 14px;
+    font-size: 0.92rem;
+    gap: 12px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 14px 16px;
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  /* Master CTA Final */
+  .cta-final-box {
+    padding: 36px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .cta-final-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .cta-final-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .cta-guarantees-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cta-final-box .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Rodapé */
+  .footer {
+    padding: 44px 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    font-size: 0.78rem;
+  }
+
+  /* Mobile Sticky Bar */
+  .mobile-sticky-bar {
+    display: flex;
+    padding: 10px 16px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
+    z-index: 999;
+  }
+
+  .sticky-title {
+    font-size: 0.7rem;
+  }
+
+  .sticky-subtitle {
+    font-size: 0.86rem;
+  }
+
+  .mobile-sticky-bar .btn {
+    padding: 9px 15px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}
+
+/* Telas muito pequenas (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero-stat-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 10px 14px;
+  }
+
+  .hero-stat-num {
+    font-size: 1.4rem;
+  }
+
+  .hero-stat-desc {
+    font-size: 0.75rem;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .simulador-title {
+    font-size: 1.45rem;
+  }
+
+  .cta-final-title {
+    font-size: 1.55rem;
+  }
+
+  .simulador-card-newall {
+    padding: 18px 12px;
+  }
+
+  .simulador-box-newall {
+    padding: 16px 12px;
+  }
 }
